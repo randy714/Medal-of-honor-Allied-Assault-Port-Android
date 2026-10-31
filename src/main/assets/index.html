@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MOHAA Launcher 1.3</title>
+<script>window.onerror=function(m,u,l){(document.body||document.documentElement).insertAdjacentHTML("afterbegin","<pre style=\"color:#f88;font-size:11px;white-space:pre-wrap;margin:0;padding:6px\">JS: "+m+" @"+l+"</pre>")};</script>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header><div class="logo">M</div><div><h1>MOHAA Launcher</h1><p>Medal of Honor: Allied Assault · v1.3 b5</p></div></header>
+<main>
+<section id="home" class="on">
+ <div class="card hero"><h2>Allied Assault</h2><p data-i="sub"></p><button class="play" id="play" data-i="play"></button><button class="btn2" id="apply" style="width:100%;margin-top:8px" data-i="apply"></button></div>
+ <h3 data-i="sum"></h3><div class="card" id="sumc"></div>
+ <h3 data-i="files"></h3>
+ <div class="card"><div class="row"><div><span data-i="folder"></span><small id="fpath">-</small></div><button class="btn2" id="pick" data-i="change"></button></div>
+ <div class="row"><span data-i="mode"></span><div class="seg" style="width:170px" id="mode"><button data-v="s" class="on" data-i="solo"></button><button data-v="m" data-i="multi"></button></div></div></div>
+</section>
+
+<section id="ctl">
+ <div class="pad" id="pad"></div>
+ <div class="acts"><button class="btn2" id="add" data-i="add"></button><button class="btn2" id="pre"></button><button class="btn2" id="tst" data-i="test"></button></div>
+ <div class="card" id="pnl" style="margin-top:12px"></div>
+ <div class="card">
+  <div class="stack"><div class="top"><span data-i="gs"></span><span class="val" id="gsv">100%</span></div><input type="range" id="gs" min="60" max="140" value="100"></div>
+  <div class="stack"><div class="top"><span data-i="op"></span><span class="val" id="opv">70%</span></div><input type="range" id="op" min="20" max="100" value="70"></div>
+  <div class="stack"><div class="top"><span data-i="se"></span><span class="val" id="sev">50</span></div><input type="range" id="se" min="10" max="100" value="50"></div>
+  <div class="row"><span data-i="af"></span><label class="sw"><input type="checkbox" id="af"><i></i></label></div>
+  <div class="row"><span data-i="vib"></span><label class="sw"><input type="checkbox" id="vib" checked><i></i></label></div>
+ </div>
+</section>
+
+<section id="set">
+ <h3 data-i="perf"></h3>
+ <div class="card">
+  <div class="stack"><div class="top"><span data-i="fps"></span><span class="val" id="fpsv">60</span></div>
+   <div class="seg" id="fps"><button data-v="30">30</button><button data-v="45">45</button><button data-v="60" class="on">60</button><button data-v="90">90</button><button data-v="0" data-i="free"></button></div></div>
+  <div class="row"><span data-i="fpsc"></span><label class="sw"><input type="checkbox" id="fpsc" checked><i></i></label></div>
+  <div class="row"><span data-i="vsync"></span><label class="sw"><input type="checkbox" id="vsync"><i></i></label></div>
+  <div class="row"><span data-i="eco"></span><label class="sw"><input type="checkbox" id="eco"><i></i></label></div>
+ </div>
+ <h3 data-i="disp"></h3>
+ <div class="card">
+  <div class="stack"><div class="top"><span data-i="res"></span><span class="val" id="resv">100%</span></div><input type="range" id="res" min="40" max="100" step="5" value="100"></div>
+  <div class="stack"><div class="top"><span data-i="tex"></span></div><div class="seg" id="tex"><button data-v="L" data-i="low"></button><button data-v="M" class="on" data-i="med"></button><button data-v="H" data-i="high"></button></div></div>
+  <div class="stack"><div class="top"><span>FOV</span><span class="val" id="fovv">80</span></div><input type="range" id="fov" min="60" max="110" value="80"></div>
+  <div class="stack"><div class="top"><span data-i="bri"></span><span class="val" id="brv">50%</span></div><input type="range" id="br" min="0" max="100" value="50"></div>
+  <div class="row"><span data-i="full"></span><label class="sw"><input type="checkbox" id="full" checked><i></i></label></div>
+  <div class="row"><span data-i="fx"></span><label class="sw"><input type="checkbox" id="fx"><i></i></label></div>
+ </div>
+ <h3 data-i="lang"></h3>
+ <div class="card"><div class="seg" id="lang"><button data-v="id" class="on">Indonesia</button><button data-v="en">English</button></div></div>
+</section>
+
+<section id="more">
+ <div class="card">
+  <div class="row"><span data-i="backup"></span><button class="btn2" id="bk" data-i="copy"></button></div>
+  <div class="row"><span data-i="rall"></span><button class="btn2 red" id="rs" data-i="reset"></button></div>
+ </div>
+ <div class="card"><p style="margin:0;color:var(--mu);font-size:13px" data-i="note"></p></div>
+ <div class="ver"><span>MOHAA Launcher 1.3</span><span>OpenMoHAA</span></div>
+</section>
+</main>
+
+<div id="test"><div id="tc"></div><div id="ti"></div><button class="btn2" id="tx">✕</button></div>
+<div class="hud" id="hud"></div>
+<nav>
+ <button class="on" data-t="home"><svg viewBox="0 0 24 24"><path d="M5 4l14 8-14 8z"/></svg><span data-i="n1"></span></button>
+ <button data-t="ctl"><svg viewBox="0 0 24 24"><circle cx="8" cy="12" r="4"/><circle cx="17" cy="9" r="2.5"/><circle cx="17" cy="16" r="2.5"/></svg><span data-i="n2"></span></button>
+ <button data-t="set"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg><span data-i="n3"></span></button>
+ <button data-t="more"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span data-i="n4"></span></button>
+</nav>
+<script src="a.js"></script>
+<script src="b.js"></script>
+</body></html>
